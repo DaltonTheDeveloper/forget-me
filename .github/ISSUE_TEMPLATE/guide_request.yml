@@ -1,0 +1,45 @@
+name: "📋 Request or fix a deletion guide"
+description: Ask for a new service guide or report that an existing one is wrong.
+title: "[guide] "
+labels: ["guide"]
+body:
+  - type: input
+    id: service
+    attributes:
+      label: Service name
+      placeholder: e.g. Strava
+    validations:
+      required: true
+  - type: input
+    id: domain
+    attributes:
+      label: Service domain
+      placeholder: e.g. strava.com
+  - type: dropdown
+    id: kind
+    attributes:
+      label: New guide or fix?
+      options:
+        - New guide
+        - Fix an existing guide
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Deletion steps (if known)
+      description: How do you actually delete an account here? Links to the real settings/privacy page help.
+  - type: dropdown
+    id: method
+    attributes:
+      label: How is deletion requested?
+      options:
+        - "email (a real privacy/DPO address)"
+        - "user_form (a self-service web form/flow)"
+        - "manual_only (no stable form/email)"
+        - "not sure"
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else?
+      placeholder: Grace periods, gotchas, organizations vs personal accounts, etc.

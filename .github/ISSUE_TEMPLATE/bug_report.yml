@@ -1,0 +1,40 @@
+name: "🐛 Bug report"
+description: Something isn't working as expected.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part?
+      options: [API, Web app, CLI, Discovery, Sending, Guides, Other]
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. …
+        2. …
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      placeholder: OS, Bun version, self-hosted or hosted
+  - type: checkboxes
+    id: no-secrets
+    attributes:
+      label: Safety
+      options:
+        - label: I have NOT included any secrets, API keys, or real personal emails in this report.
+          required: true
