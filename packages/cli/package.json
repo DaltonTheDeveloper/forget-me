@@ -1,0 +1,19 @@
+{
+  "name": "@forget-me/cli",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A pretty terminal client for the forget-me API — discover where your email is registered and send verification-gated GDPR/CCPA deletion requests.",
+  "bin": {
+    "forget-me": "src/index.ts"
+  },
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "typecheck": "bunx tsc --noEmit -p ."
+  },
+  "dependencies": {
+    "@forget-me/shared": "workspace:*",
+    "commander": "^12.1.0",
+    "picocolors": "^1.1.1"
+  }
+}

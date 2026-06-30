@@ -25,10 +25,14 @@ import { startVerification, confirmVerification, isEmailVerified } from "./verif
 import { sendDeletionRequests, NotVerifiedError } from "./sending/send.ts";
 import { renderDeletionEmail } from "./sending/templates.ts";
 import { sendEmail } from "./sending/mailer.ts";
+import { accounts } from "./routes/accounts.ts";
 
 const app = new Hono();
 app.use("*", logger());
 app.use("*", cors());
+
+// Env-gated auth (Clerk) + payments (Stripe) routes.
+app.route("/", accounts);
 
 app.get("/health", (c) =>
   c.json({ ok: true, features: {
