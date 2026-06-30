@@ -1,0 +1,42 @@
+# Self-host forget-me: Postgres + API. Run `docker compose up -d`, then seed guides:
+#   docker compose exec api bun run db:seed:guides
+# The web app deploys separately (Vercel) or run `bun run web:dev` against the API.
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: forgetme
+      POSTGRES_PASSWORD: forgetme
+      POSTGRES_DB: forgetme
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U forgetme"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: packages/api/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://forgetme:forgetme@db:5432/forgetme
+      PORT: "3001"
+      # Optional integrations — uncomment and set to enable.
+      # HIBP_API_KEY: ""
+      # RESEND_API_KEY: ""
+      # VERIFICATION_TOKEN_SECRET: ""
+    ports:
+      - "3001:3001"
+    command: sh -c "bun run db:migrate && bun run start"
+
+volumes:
+  pgdata:
