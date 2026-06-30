@@ -1,8 +1,29 @@
+# dependencies
 node_modules/
+.pnp
+.pnp.js
+
+# env — NEVER commit secrets. Only .env.example is tracked.
 .env
-.env.local
-.DS_Store
+.env.*
+!.env.example
+
+# builds
 dist/
+build/
 .next/
-*.log
+out/
+*.tsbuildinfo
+
+# deploy
 .vercel
+.fly
+
+# misc
+.DS_Store
+*.log
+npm-debug.log*
+coverage/
+.idea/
+.vscode/*
+!.vscode/extensions.json
