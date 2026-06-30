@@ -1,0 +1,32 @@
+service:
+  name: Facebook
+  domain: facebook.com
+  website: https://www.facebook.com
+deletion:
+  difficulty: easy
+  estimated_time_minutes: 10
+  requires_email_access: false
+  requires_password: true
+steps:
+  - title: Sign in to Facebook
+    description: Log in to the account you want to delete.
+    url: https://www.facebook.com/login
+  - title: Open the account deletion page
+    description: Settings & privacy → Settings → Accounts Center → Personal details → Account ownership and control → Deactivation or deletion.
+    url: https://www.facebook.com/help/delete_account
+  - title: Choose 'Delete account'
+    description: Optionally download your information first, then continue.
+  - title: Confirm with your password
+    description: Re-enter your password to confirm deletion.
+    warning: There is a 30-day cancellation window; logging in during it cancels deletion. Full removal can take up to 90 days.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://www.facebook.com/help/delete_account
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Self-service deletion via Accounts Center. A 30-day grace period applies before permanent removal.

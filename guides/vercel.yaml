@@ -1,0 +1,32 @@
+service:
+  name: Vercel
+  domain: vercel.com
+  website: https://vercel.com
+deletion:
+  difficulty: easy
+  estimated_time_minutes: 5
+  requires_email_access: false
+  requires_password: false
+steps:
+  - title: Sign in to Vercel
+    description: Log in to the account you want to delete.
+    url: https://vercel.com/login
+  - title: Open Account Settings
+    description: Avatar → Account Settings.
+    url: https://vercel.com/account
+  - title: Delete account
+    description: Scroll to the bottom of the General tab to 'Delete Account' (delete or transfer teams/projects first).
+  - title: Confirm
+    description: Type the confirmation phrase and confirm.
+    warning: Deployments, domains, and projects are removed. Transfer any teams you own first.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://vercel.com/account
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Self-service deletion in Account Settings. Team/Pro plans must be cancelled or transferred first.

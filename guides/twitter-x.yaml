@@ -1,0 +1,32 @@
+service:
+  name: Twitter/X
+  domain: x.com
+  website: https://x.com
+deletion:
+  difficulty: easy
+  estimated_time_minutes: 5
+  requires_email_access: false
+  requires_password: true
+steps:
+  - title: Sign in to X
+    description: Log in to the account you want to delete.
+    url: https://x.com/login
+  - title: Open Deactivate your account
+    description: Settings and privacy → Your account → Deactivate your account.
+    url: https://x.com/settings/deactivate
+  - title: Confirm deactivation
+    description: Read the conditions and confirm with your password.
+  - title: Wait out the 30-day window
+    description: Do not log in during this period.
+    warning: Logging in within 30 days reactivates the account. After 30 days of inactivity it is permanently deleted.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://x.com/settings/deactivate
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Deletion is a self-service deactivation followed by a 30-day grace period. Avoid logging in to let deletion finalize.

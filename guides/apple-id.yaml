@@ -1,0 +1,33 @@
+service:
+  name: Apple ID
+  domain: apple.com
+  website: https://www.apple.com
+
+deletion:
+  difficulty: hard
+  estimated_time_minutes: 20
+  requires_email_access: true
+  requires_password: true
+
+steps:
+  - title: "Open Apple's Data and Privacy portal"
+    description: "Sign in with the Apple ID you want to delete."
+    url: "https://privacy.apple.com"
+  - title: "Request to delete your account"
+    description: "Under 'Delete your account', select a reason and review what will be removed."
+  - title: "Read the deletion checklist"
+    description: "Cancel subscriptions, back up data, and sign out of all devices as Apple instructs."
+    warning: "You lose access to purchases, iCloud data, and App Store content permanently."
+  - title: "Receive your access code and confirm"
+    description: "Apple gives you a unique access code and reviews the request over up to 7 days before deletion completes."
+
+deletion_request:
+  method: manual_only
+
+metadata:
+  verified_by: "@forget-me"
+  verified_date: "2026-06-30"
+  community_verified: true
+  notes: |
+    Apple requires identity confirmation and a multi-day review with a one-time access
+    code, so there is no email or form channel forget-me can submit. This is manual-only.

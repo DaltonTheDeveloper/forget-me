@@ -1,0 +1,32 @@
+service:
+  name: GitHub Pages
+  domain: github.com
+  website: https://pages.github.com
+deletion:
+  difficulty: easy
+  estimated_time_minutes: 5
+  requires_email_access: false
+  requires_password: false
+steps:
+  - title: Sign in to GitHub
+    description: Log in to the account hosting the Pages site.
+    url: https://github.com/login
+  - title: Open the repository's Pages settings
+    description: Go to the repo → Settings → Pages and unpublish the site.
+    url: https://docs.github.com/en/pages/getting-started-with-github-pages/unpublishing-a-github-pages-site
+  - title: Unpublish or delete the source
+    description: Set the Pages source to 'None' to unpublish, or delete the repository/branch that hosts the site.
+  - title: Optionally remove a custom domain
+    description: Delete the CNAME record and the custom-domain entry in Pages settings.
+    warning: There is no separate GitHub Pages account. A Pages site is removed by unpublishing it or deleting its repository; deleting your GitHub account removes all your Pages sites.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://docs.github.com/en/pages/getting-started-with-github-pages/unpublishing-a-github-pages-site
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: GitHub Pages has no standalone account. Remove a site by setting its Pages source to None or deleting the repo; delete the GitHub account itself to remove everything (see the github.yaml guide).

@@ -1,0 +1,32 @@
+service:
+  name: Patreon
+  domain: patreon.com
+  website: https://www.patreon.com
+deletion:
+  difficulty: easy
+  estimated_time_minutes: 5
+  requires_email_access: false
+  requires_password: true
+steps:
+  - title: Sign in to Patreon
+    description: Log in to the account you want to delete.
+    url: https://www.patreon.com/login
+  - title: Open Settings
+    description: Go to account Settings.
+    url: https://support.patreon.com/hc/en-us/articles/203913809-How-do-I-delete-my-Patreon-account
+  - title: Delete account
+    description: Under Account, choose 'Delete your account' (cancel memberships and stop any campaign first).
+  - title: Confirm with your password
+    description: Re-enter your password to confirm.
+    warning: Creators must stop their campaign before deleting. Deletion is permanent.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://support.patreon.com/hc/en-us/articles/203913809-How-do-I-delete-my-Patreon-account
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Self-service deletion in account settings. Cancel pledges and close any creator campaign first.

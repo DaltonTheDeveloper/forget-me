@@ -1,0 +1,31 @@
+service:
+  name: TikTok
+  domain: tiktok.com
+  website: https://www.tiktok.com
+deletion:
+  difficulty: medium
+  estimated_time_minutes: 10
+  requires_email_access: false
+  requires_password: false
+steps:
+  - title: Open TikTok and go to your profile
+    description: Sign in to the account you want to delete (deletion is done in the app or web settings).
+  - title: Open account settings
+    description: Profile → Menu → Settings and privacy → Account → Deactivate or delete account.
+    url: https://support.tiktok.com/en/account-and-privacy/deleting-an-account
+  - title: Choose 'Delete account permanently'
+    description: Follow the verification prompts (SMS/email code).
+  - title: Confirm deletion
+    description: Submit the request.
+    warning: TikTok holds the account for 30 days before permanent deletion; logging in cancels it. Cancel any in-app subscriptions first.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://support.tiktok.com/en/account-and-privacy/deleting-an-account
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Deletion is self-service in the app/web settings with a 30-day grace period. The linked help article walks through the exact in-app path.

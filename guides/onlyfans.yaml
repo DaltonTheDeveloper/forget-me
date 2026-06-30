@@ -1,0 +1,32 @@
+service:
+  name: OnlyFans
+  domain: onlyfans.com
+  website: https://onlyfans.com
+deletion:
+  difficulty: medium
+  estimated_time_minutes: 10
+  requires_email_access: false
+  requires_password: true
+steps:
+  - title: Sign in to OnlyFans
+    description: Log in to the account you want to delete.
+    url: https://onlyfans.com
+  - title: Open Settings → Account
+    description: Go to your profile settings.
+    url: https://onlyfans.com/my/settings
+  - title: Delete account
+    description: Under Account → choose 'Delete account' (creators must have no active subscribers/payout obligations).
+  - title: Confirm
+    description: Confirm via the verification prompt.
+    warning: Creators may need to wait out active subscriptions and settle payouts. Deletion is permanent.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://onlyfans.com/my/settings
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Self-service deletion in account settings. Creators must clear active subscriptions and pending payouts first.

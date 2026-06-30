@@ -1,0 +1,32 @@
+service:
+  name: Twitch
+  domain: twitch.tv
+  website: https://www.twitch.tv
+deletion:
+  difficulty: easy
+  estimated_time_minutes: 5
+  requires_email_access: true
+  requires_password: true
+steps:
+  - title: Sign in to Twitch
+    description: Log in to the account you want to delete.
+    url: https://www.twitch.tv/login
+  - title: Open the delete-account page
+    description: Go directly to Twitch's account-deletion page.
+    url: https://www.twitch.tv/user/delete-account
+  - title: Confirm your identity
+    description: Re-enter your password and complete any 2FA/verification.
+  - title: Delete account
+    description: Confirm deletion.
+    warning: Cancel any active subscriptions/Turbo and disconnect from an Amazon login first. Deletion is permanent.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://www.twitch.tv/user/delete-account
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Self-service deletion via Twitch's dedicated delete-account page.

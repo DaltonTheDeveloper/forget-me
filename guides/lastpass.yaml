@@ -1,0 +1,31 @@
+service:
+  name: LastPass
+  domain: lastpass.com
+  website: https://www.lastpass.com
+deletion:
+  difficulty: medium
+  estimated_time_minutes: 10
+  requires_email_access: true
+  requires_password: true
+steps:
+  - title: Export your vault first
+    description: "In the LastPass extension/web vault: Advanced Options → Export, so you don't lose stored passwords."
+  - title: Open the delete-account page
+    description: Go to LastPass's dedicated account-deletion page.
+    url: https://lastpass.com/delete_account.php
+  - title: Choose how to delete
+    description: Select 'Delete' (you remember your master password) and authenticate, or the no-password path which requires email verification.
+  - title: Confirm via email
+    description: Open LastPass's confirmation email and confirm deletion.
+    warning: Deletion permanently removes your encrypted vault. Export everything you need first.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://lastpass.com/delete_account.php
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Self-service deletion via LastPass's delete-account page, confirmed by email. Export your vault before deleting.

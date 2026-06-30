@@ -1,0 +1,32 @@
+service:
+  name: YouTube
+  domain: youtube.com
+  website: https://www.youtube.com
+deletion:
+  difficulty: medium
+  estimated_time_minutes: 10
+  requires_email_access: true
+  requires_password: true
+steps:
+  - title: Sign in to YouTube
+    description: Log in with the Google Account whose channel you want to remove.
+    url: https://www.youtube.com
+  - title: Open advanced channel settings
+    description: Settings → Advanced settings, or go directly to the advanced account page.
+    url: https://www.youtube.com/account_advanced
+  - title: Delete channel
+    description: Choose 'Delete channel' → 'I want to permanently delete my content'.
+  - title: Confirm with your Google password
+    description: Re-enter your password to confirm.
+    warning: This deletes the YouTube channel only; the underlying Google Account remains. To remove everything, delete the Google Account separately.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://www.youtube.com/account_advanced
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: A YouTube channel is tied to a Google Account. Deleting the channel removes videos/comments but keeps the Google Account; see google-account.yaml to delete the whole account.

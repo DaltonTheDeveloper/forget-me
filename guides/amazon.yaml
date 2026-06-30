@@ -1,0 +1,32 @@
+service:
+  name: Amazon
+  domain: amazon.com
+  website: https://www.amazon.com
+deletion:
+  difficulty: medium
+  estimated_time_minutes: 15
+  requires_email_access: true
+  requires_password: true
+steps:
+  - title: Sign in to Amazon
+    description: Log in to the account you want to close.
+    url: https://www.amazon.com/ap/signin
+  - title: Open the account-closure help page
+    description: Account → Login & security, or use the 'Close Your Account' help flow.
+    url: https://www.amazon.com/gp/help/customer/display.html?nodeId=GDK92DNLSGWTV6MP
+  - title: Submit the account-closure request
+    description: Choose 'Close my account', pick a reason, and submit.
+  - title: Confirm via email
+    description: Amazon emails you to confirm; complete the verification.
+    warning: Closing your account permanently removes order history, Prime, Kindle/digital content, and reviews. Cancel Prime and other subscriptions first.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://www.amazon.com/gp/help/customer/display.html?nodeId=GDK92DNLSGWTV6MP
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Account closure is initiated by you and confirmed via email. It covers the linked Amazon retail account, not separately-registered AWS accounts.

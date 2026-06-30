@@ -1,0 +1,32 @@
+service:
+  name: Instagram
+  domain: instagram.com
+  website: https://www.instagram.com
+deletion:
+  difficulty: easy
+  estimated_time_minutes: 5
+  requires_email_access: false
+  requires_password: true
+steps:
+  - title: Sign in to Instagram
+    description: Log in to the account you want to delete.
+    url: https://www.instagram.com/accounts/login/
+  - title: Open the delete-account page
+    description: Go to the account deletion page (also reachable via Settings → Accounts Center → Personal details → Account ownership and control).
+    url: https://www.instagram.com/accounts/remove/request/permanent/
+  - title: Select a reason and re-enter password
+    description: Choose why you're deleting and confirm your password.
+  - title: Confirm deletion
+    description: Submit the request.
+    warning: Instagram delays permanent deletion for 30 days; logging in during that window cancels it.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://www.instagram.com/accounts/remove/request/permanent/
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Self-service permanent-deletion page. A 30-day grace period applies.

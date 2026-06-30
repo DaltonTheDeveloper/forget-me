@@ -1,0 +1,32 @@
+service:
+  name: Expedia
+  domain: expedia.com
+  website: https://www.expedia.com
+deletion:
+  difficulty: hard
+  estimated_time_minutes: 20
+  requires_email_access: true
+  requires_password: false
+steps:
+  - title: Sign in to Expedia
+    description: Log in to the account you want to delete.
+    url: https://www.expedia.com
+  - title: Open Expedia Group's privacy request portal
+    description: Expedia does not expose a one-click delete in settings; account deletion goes through the Expedia Group privacy portal.
+    url: https://privacy.expediagroup.com
+  - title: Submit a deletion / 'delete my data' request
+    description: Choose the deletion request type, enter your account email, and submit.
+  - title: Verify by email and await processing
+    description: Confirm the request via the email Expedia sends.
+    warning: Pending or upcoming bookings must be completed or cancelled first. Processing can take up to 30+ days.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://privacy.expediagroup.com
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Expedia has no self-service delete toggle in account settings; deletion is handled through the Expedia Group privacy/data-subject-request portal.

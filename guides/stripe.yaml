@@ -1,0 +1,32 @@
+service:
+  name: Stripe
+  domain: stripe.com
+  website: https://stripe.com
+deletion:
+  difficulty: medium
+  estimated_time_minutes: 15
+  requires_email_access: false
+  requires_password: true
+steps:
+  - title: Sign in to the Stripe Dashboard
+    description: Log in as the account owner.
+    url: https://dashboard.stripe.com/login
+  - title: Open Account settings
+    description: Settings → Your account → Account details.
+    url: https://dashboard.stripe.com/settings/account
+  - title: Close the account
+    description: Scroll to the bottom and choose 'Close account'.
+  - title: Confirm closure
+    description: Confirm; payouts must be settled first.
+    warning: Stripe must retain certain transaction records for legal/financial-compliance reasons even after closure. Settle balances and payouts before closing.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://dashboard.stripe.com/settings/account
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Account owners close the account from the Dashboard. Stripe retains transaction records required by financial regulations; full erasure of personal data can be requested separately under GDPR/CCPA.

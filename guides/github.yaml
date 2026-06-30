@@ -1,0 +1,38 @@
+service:
+  name: GitHub
+  domain: github.com
+  website: https://github.com
+
+deletion:
+  difficulty: easy
+  estimated_time_minutes: 5
+  requires_email_access: true
+  requires_password: true
+
+steps:
+  - title: "Sign in to GitHub"
+    description: "Go to github.com and log in to the account you want to delete."
+    url: "https://github.com/login"
+  - title: "Open account settings"
+    description: "Click your profile photo (top right) → Settings."
+    url: "https://github.com/settings/admin"
+  - title: "Scroll to the Danger Zone"
+    description: "At the bottom of the Account settings page, find the 'Delete account' section."
+  - title: "Delete this account"
+    description: "Click 'Delete your account', then confirm by typing your username and the confirmation phrase."
+    warning: "Deletion is immediate and permanent. Transfer or back up repositories first. Organizations must be deleted or transferred separately."
+
+deletion_request:
+  method: email
+  email:
+    recipients: ["privacy@github.com"]
+    compliance_laws: ["GDPR", "CCPA"]
+    expected_response_time_days: 30
+
+metadata:
+  verified_by: "@forget-me"
+  verified_date: "2026-06-30"
+  community_verified: true
+  notes: |
+    Self-service deletion is fastest. The privacy@github.com address is for formal
+    GDPR/CCPA erasure requests when you cannot access the account.

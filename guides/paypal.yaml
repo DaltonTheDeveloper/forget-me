@@ -1,0 +1,32 @@
+service:
+  name: PayPal
+  domain: paypal.com
+  website: https://www.paypal.com
+deletion:
+  difficulty: medium
+  estimated_time_minutes: 10
+  requires_email_access: false
+  requires_password: true
+steps:
+  - title: Sign in to PayPal
+    description: Log in to the account you want to close.
+    url: https://www.paypal.com/signin
+  - title: Open Account Settings
+    description: Settings (gear icon) → Account → Close your account.
+    url: https://www.paypal.com/myaccount/settings/
+  - title: Resolve any balance or pending activity
+    description: Withdraw any balance and clear pending transactions first.
+  - title: Close the account
+    description: Confirm closure.
+    warning: You must have a zero balance and no pending payments/disputes. PayPal retains transaction records as required by financial law.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://www.paypal.com/myaccount/settings/
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Self-service closure from account settings; requires a zero balance and no open cases.

@@ -1,0 +1,27 @@
+service:
+  name: Booking.com
+  domain: booking.com
+  website: https://www.booking.com
+deletion:
+  difficulty: hard
+  estimated_time_minutes: 20
+  requires_email_access: true
+  requires_password: false
+steps:
+  - title: Sign in to Booking.com
+    description: Log in to the account you want to delete.
+    url: https://account.booking.com/sign-in
+  - title: Complete or cancel any active bookings
+    description: Account deletion is blocked while you have upcoming or unresolved reservations.
+  - title: Contact Customer Service to request deletion
+    description: Use the in-account help/Customer Service contact to ask for account closure and personal-data deletion; Booking.com does not offer a one-click self-service delete.
+  - title: Verify your identity and confirm
+    description: Respond to Booking.com's verification email to finalize the request.
+    warning: Deletion is handled by Booking.com support rather than an instant settings toggle, and can take several weeks.
+deletion_request:
+  method: manual_only
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: "MANUAL ONLY: Booking.com provides no stable self-service deletion form or a published privacy email we can submit to programmatically. Deletion is requested through their Customer Service contact and verified by email."

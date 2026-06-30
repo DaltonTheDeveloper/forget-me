@@ -1,0 +1,32 @@
+service:
+  name: Airbnb
+  domain: airbnb.com
+  website: https://www.airbnb.com
+deletion:
+  difficulty: medium
+  estimated_time_minutes: 10
+  requires_email_access: true
+  requires_password: true
+steps:
+  - title: Sign in to Airbnb
+    description: Log in to the account you want to delete.
+    url: https://www.airbnb.com/login
+  - title: Open Account settings
+    description: Account → Personal info / Account settings.
+    url: https://www.airbnb.com/account-settings
+  - title: Start the deletion request
+    description: Choose 'Deactivate or delete your account' and select 'Delete account'.
+  - title: Confirm
+    description: Pick a reason and confirm; Airbnb may email a verification.
+    warning: You must resolve active reservations/host obligations first. Deletion can take up to 30 days to complete.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://www.airbnb.com/account-settings
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Self-service deletion from account settings. Clear upcoming trips/reservations before requesting.

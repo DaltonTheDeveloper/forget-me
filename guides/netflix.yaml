@@ -1,0 +1,32 @@
+service:
+  name: Netflix
+  domain: netflix.com
+  website: https://www.netflix.com
+deletion:
+  difficulty: easy
+  estimated_time_minutes: 5
+  requires_email_access: false
+  requires_password: true
+steps:
+  - title: Sign in to Netflix
+    description: Log in to the account you want to close.
+    url: https://www.netflix.com/login
+  - title: Open your Account page
+    description: Go to Account settings.
+    url: https://www.netflix.com/account
+  - title: Cancel membership / delete account
+    description: Cancel your membership; choose 'Delete account' if offered in your region.
+  - title: Confirm
+    description: Confirm the cancellation/deletion.
+    warning: After cancellation Netflix retains your profile/viewing data for 10 months in case you rejoin, then deletes it automatically.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://www.netflix.com/account
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Cancel your membership in account settings. Netflix auto-deletes account data after ~10 months of inactivity; some regions also expose an immediate 'Delete account' option.

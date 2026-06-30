@@ -1,0 +1,27 @@
+service:
+  name: iCloud
+  domain: icloud.com
+  website: https://www.icloud.com
+deletion:
+  difficulty: hard
+  estimated_time_minutes: 20
+  requires_email_access: true
+  requires_password: true
+steps:
+  - title: Understand iCloud is part of your Apple ID
+    description: iCloud has no separate account; it is the storage/sync layer of your Apple ID. Deleting iCloud data means managing or deleting the Apple ID itself.
+  - title: Sign out / remove iCloud on devices (optional)
+    description: "On each device: Settings → [your name] → Sign Out, to stop syncing without deleting the Apple ID."
+  - title: Open Apple's Data and Privacy portal to delete the Apple ID
+    description: To permanently remove iCloud data, request Apple ID deletion.
+    url: https://privacy.apple.com
+  - title: Complete Apple's review
+    description: Apple issues a one-time access code and reviews the request for up to 7 days.
+    warning: Deleting the Apple ID erases iCloud Mail, Photos, Drive, backups, and all purchases permanently. Back up first.
+deletion_request:
+  method: manual_only
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: "MANUAL ONLY: iCloud is inseparable from the Apple ID. There is no iCloud-specific deletion form or email; removal goes through Apple's Data and Privacy portal (privacy.apple.com) with identity verification and a multi-day review. See apple-id.yaml."

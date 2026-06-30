@@ -1,0 +1,32 @@
+service:
+  name: Dropbox
+  domain: dropbox.com
+  website: https://www.dropbox.com
+deletion:
+  difficulty: easy
+  estimated_time_minutes: 5
+  requires_email_access: false
+  requires_password: true
+steps:
+  - title: Sign in to Dropbox
+    description: Log in to the account you want to delete.
+    url: https://www.dropbox.com/login
+  - title: Open the delete-account page
+    description: Avatar → Settings → General → Delete account, or go directly to the delete page.
+    url: https://www.dropbox.com/account/delete
+  - title: Re-enter your password and reason
+    description: Provide your password and select a reason.
+  - title: Confirm deletion
+    description: Confirm to permanently delete.
+    warning: Cancel a paid plan first and back up files. Deletion permanently removes files not shared elsewhere.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://www.dropbox.com/account/delete
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Self-service deletion via the dedicated delete-account page. Downgrade/cancel paid plans first.

@@ -1,0 +1,32 @@
+service:
+  name: Discord
+  domain: discord.com
+  website: https://discord.com
+deletion:
+  difficulty: easy
+  estimated_time_minutes: 5
+  requires_email_access: false
+  requires_password: true
+steps:
+  - title: Sign in to Discord
+    description: Open the app or web client and log in.
+    url: https://discord.com/login
+  - title: Open User Settings → My Account
+    description: Click the gear icon next to your name, then My Account.
+    url: https://support.discord.com/hc/en-us/articles/212500837-How-do-I-delete-my-account
+  - title: Choose Delete Account
+    description: Under Account Management select 'Delete Account' (transfer or delete any servers you own first).
+  - title: Confirm
+    description: Enter your password (and 2FA code if enabled) to confirm.
+    warning: You must transfer ownership of or delete any servers you own before you can delete the account. Deletion has a ~14-30 day pending window.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://support.discord.com/hc/en-us/articles/212500837-How-do-I-delete-my-account
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Self-service deletion in User Settings. Hand off owned servers first.

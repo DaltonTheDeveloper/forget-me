@@ -1,0 +1,32 @@
+service:
+  name: Pinterest
+  domain: pinterest.com
+  website: https://www.pinterest.com
+deletion:
+  difficulty: easy
+  estimated_time_minutes: 5
+  requires_email_access: true
+  requires_password: false
+steps:
+  - title: Sign in to Pinterest
+    description: Log in to the account you want to delete.
+    url: https://www.pinterest.com/login/
+  - title: Open account management settings
+    description: Settings → Account management.
+    url: https://www.pinterest.com/settings/account-settings/
+  - title: Delete account
+    description: Under Account changes choose 'Delete account'.
+  - title: Confirm via email
+    description: Pinterest emails you a confirmation; click it to finalize.
+    warning: There is a 14-day deactivation window before permanent deletion.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://www.pinterest.com/settings/account-settings/
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Self-service deletion confirmed by email, with a 14-day grace period.

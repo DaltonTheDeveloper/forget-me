@@ -1,0 +1,31 @@
+service:
+  name: DoorDash
+  domain: doordash.com
+  website: https://www.doordash.com
+deletion:
+  difficulty: easy
+  estimated_time_minutes: 5
+  requires_email_access: false
+  requires_password: false
+steps:
+  - title: Sign in to DoorDash
+    description: Log in via the app or website.
+  - title: Open Account settings / privacy
+    description: Account → Manage Account → Delete Account.
+    url: https://help.doordash.com/consumers/s/article/How-do-I-delete-my-account
+  - title: Request account deletion
+    description: Choose 'Delete Account' and select a reason.
+  - title: Confirm via verification code
+    description: Enter the code DoorDash sends to confirm.
+    warning: Cancel any DashPass subscription first. Deletion removes order history and saved payment methods.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://help.doordash.com/consumers/s/article/How-do-I-delete-my-account
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Self-service deletion under Manage Account, confirmed by a verification code.

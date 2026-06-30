@@ -1,0 +1,32 @@
+service:
+  name: Notion
+  domain: notion.so
+  website: https://www.notion.so
+deletion:
+  difficulty: easy
+  estimated_time_minutes: 5
+  requires_email_access: false
+  requires_password: false
+steps:
+  - title: Sign in to Notion
+    description: Log in to the account you want to delete.
+    url: https://www.notion.so/login
+  - title: Open Settings → My account
+    description: Settings & members → My account.
+    url: https://www.notion.so/help/account-settings
+  - title: Delete my account
+    description: Scroll to the bottom and choose 'Delete my entire account'.
+  - title: Confirm by typing your email
+    description: Type your account email to confirm.
+    warning: This deletes your personal account. Workspaces you own should be transferred or deleted separately.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://www.notion.so/help/account-settings
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Self-service deletion under My account. Owned workspaces are handled separately.

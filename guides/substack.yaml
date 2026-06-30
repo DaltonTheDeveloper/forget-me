@@ -1,0 +1,32 @@
+service:
+  name: Substack
+  domain: substack.com
+  website: https://substack.com
+deletion:
+  difficulty: easy
+  estimated_time_minutes: 5
+  requires_email_access: false
+  requires_password: false
+steps:
+  - title: Sign in to Substack
+    description: Log in to the account you want to delete.
+    url: https://substack.com/sign-in
+  - title: Open Settings
+    description: Click your avatar → Settings.
+    url: https://support.substack.com/hc/en-us/articles/360037588512-How-do-I-delete-my-account
+  - title: Delete account
+    description: Under the account section choose 'Delete account' (delete any publications you own first).
+  - title: Confirm
+    description: Confirm deletion.
+    warning: Active paid subscriptions and owned publications should be cancelled/closed first.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://support.substack.com/hc/en-us/articles/360037588512-How-do-I-delete-my-account
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Self-service deletion in Settings. Close any publications you run before deleting.

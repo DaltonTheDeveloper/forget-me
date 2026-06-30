@@ -1,0 +1,32 @@
+service:
+  name: LinkedIn
+  domain: linkedin.com
+  website: https://www.linkedin.com
+deletion:
+  difficulty: easy
+  estimated_time_minutes: 5
+  requires_email_access: true
+  requires_password: true
+steps:
+  - title: Sign in to LinkedIn
+    description: Log in to the account you want to close.
+    url: https://www.linkedin.com/login
+  - title: Open account management settings
+    description: Click your photo (top right) → Settings & Privacy → Account preferences → Account management.
+    url: https://www.linkedin.com/psettings/account-management/close-account
+  - title: Choose 'Close account'
+    description: Select a reason and continue.
+  - title: Verify and confirm closure
+    description: Re-enter your password to confirm.
+    warning: LinkedIn keeps the account closable/restorable for a short window, then deletes data. Premium subscriptions must be cancelled separately.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://www.linkedin.com/psettings/account-management/close-account
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Closure is fully self-service in account settings. forget-me hands you the deletion flow to complete in your own session.

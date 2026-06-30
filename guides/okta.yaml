@@ -1,0 +1,26 @@
+service:
+  name: Okta
+  domain: okta.com
+  website: https://www.okta.com
+deletion:
+  difficulty: hard
+  estimated_time_minutes: 30
+  requires_email_access: true
+  requires_password: false
+steps:
+  - title: Identify your account type
+    description: Okta is enterprise identity software. End-user accounts are managed by your organization's Okta admin; org/tenant deletion is a separate process.
+  - title: "End users: ask your Okta admin"
+    description: If you're an employee/end user, your account is provisioned and deprovisioned by your organization's IT/Okta administrator, not by you directly.
+  - title: "Org admins: deactivate users, then contact Okta"
+    description: An org admin can deactivate/delete users in the Admin Console. Deleting an entire Okta org/tenant requires opening a case with Okta Support.
+  - title: "Developer Edition: contact support to close the org"
+    description: Free developer orgs are closed by contacting Okta Support; there is no self-service org-deletion button.
+    warning: Tenant/org deletion is irreversible and removes all configured apps, users, and policies.
+deletion_request:
+  method: manual_only
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: "MANUAL ONLY: Okta is B2B identity infrastructure. End-user accounts are controlled by an organization's admin, and full org/tenant deletion requires a support case with Okta, not a self-service form or published deletion email."

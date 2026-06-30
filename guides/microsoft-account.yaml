@@ -1,0 +1,32 @@
+service:
+  name: Microsoft Account
+  domain: microsoft.com
+  website: https://account.microsoft.com
+deletion:
+  difficulty: medium
+  estimated_time_minutes: 15
+  requires_email_access: true
+  requires_password: true
+steps:
+  - title: Sign in to your Microsoft account
+    description: Log in to the account you want to close.
+    url: https://account.microsoft.com
+  - title: Open the close-account page
+    description: Go to the 'Close your account' flow.
+    url: https://account.live.com/closeaccount.aspx
+  - title: Work through the checklist
+    description: Microsoft asks you to cancel subscriptions, spend remaining balance, and back up data.
+  - title: Mark for closure
+    description: Pick a reason and confirm.
+    warning: The account is held for 30 (up to 60) days before permanent deletion; signing in cancels closure. Affects Outlook, Xbox, OneDrive, and Microsoft 365.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://account.live.com/closeaccount.aspx
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Self-service closure with a 30-60 day waiting period before permanent deletion.

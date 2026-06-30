@@ -1,0 +1,32 @@
+service:
+  name: Figma
+  domain: figma.com
+  website: https://www.figma.com
+deletion:
+  difficulty: easy
+  estimated_time_minutes: 5
+  requires_email_access: false
+  requires_password: true
+steps:
+  - title: Sign in to Figma
+    description: Log in to the account you want to delete.
+    url: https://www.figma.com/login
+  - title: Open Settings
+    description: Click your account menu → Settings.
+    url: https://help.figma.com/hc/en-us/articles/360039829134-Delete-your-account
+  - title: Delete account
+    description: Under the Account tab choose 'Delete account'.
+  - title: Confirm
+    description: Confirm deletion.
+    warning: Transfer or delete teams/files you own first. Deletion is permanent.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://help.figma.com/hc/en-us/articles/360039829134-Delete-your-account
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Self-service deletion in Settings. Reassign ownership of shared teams/files first.

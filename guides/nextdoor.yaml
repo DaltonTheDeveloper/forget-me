@@ -1,0 +1,32 @@
+service:
+  name: Nextdoor
+  domain: nextdoor.com
+  website: https://nextdoor.com
+deletion:
+  difficulty: easy
+  estimated_time_minutes: 5
+  requires_email_access: false
+  requires_password: true
+steps:
+  - title: Sign in to Nextdoor
+    description: Log in to the account you want to delete.
+    url: https://nextdoor.com/login/
+  - title: Open Settings → Account
+    description: Go to account settings.
+    url: https://help.nextdoor.com/s/article/How-to-deactivate-your-account
+  - title: Deactivate or delete account
+    description: Under Account choose deactivate/delete and select a reason.
+  - title: Confirm with your password
+    description: Re-enter your password to confirm.
+    warning: Deactivation hides your profile; full data deletion may take additional time per Nextdoor's policy.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://help.nextdoor.com/s/article/How-to-deactivate-your-account
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Self-service deactivation/deletion in account settings.

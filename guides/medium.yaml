@@ -1,0 +1,32 @@
+service:
+  name: Medium
+  domain: medium.com
+  website: https://medium.com
+deletion:
+  difficulty: easy
+  estimated_time_minutes: 5
+  requires_email_access: false
+  requires_password: false
+steps:
+  - title: Sign in to Medium
+    description: Log in to the account you want to delete.
+    url: https://medium.com/m/signin
+  - title: Open Settings → Security and apps / Account
+    description: Click your avatar → Settings.
+    url: https://help.medium.com/hc/en-us/articles/213610267-Deactivate-or-delete-your-account
+  - title: Delete account
+    description: Choose 'Delete account' and select whether to delete your stories too.
+  - title: Confirm
+    description: Confirm deletion.
+    warning: Cancel any Medium membership first. Deletion is permanent.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://help.medium.com/hc/en-us/articles/213610267-Deactivate-or-delete-your-account
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Self-service deactivation/deletion in Settings. Cancel a paid membership beforehand.

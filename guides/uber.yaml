@@ -1,0 +1,31 @@
+service:
+  name: Uber
+  domain: uber.com
+  website: https://www.uber.com
+deletion:
+  difficulty: easy
+  estimated_time_minutes: 5
+  requires_email_access: false
+  requires_password: true
+steps:
+  - title: Sign in to Uber
+    description: Log in via the app or account portal.
+  - title: Open the delete-account flow
+    description: "App: Account → Settings → Privacy → Delete Account. Web: Privacy Center → Delete your account."
+    url: https://help.uber.com/riders/article/delete-your-uber-account
+  - title: Verify your identity
+    description: Confirm with an SMS/password verification.
+  - title: Confirm deletion
+    description: Acknowledge the conditions and confirm.
+    warning: Uber holds the account for 30 days (you can cancel during that window) before permanent deletion. The same account is used for Uber Eats.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://help.uber.com/riders/article/delete-your-uber-account
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Self-service deletion via the app's Privacy settings or the web Privacy Center, with a 30-day grace period.

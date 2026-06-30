@@ -1,0 +1,36 @@
+service:
+  name: Spotify
+  domain: spotify.com
+  website: https://www.spotify.com
+
+deletion:
+  difficulty: medium
+  estimated_time_minutes: 10
+  requires_email_access: true
+  requires_password: false
+
+steps:
+  - title: "Open Spotify privacy support"
+    description: "Spotify handles account closure through its privacy support flow, not the in-app settings."
+    url: "https://support.spotify.com/article/close-account/"
+  - title: "Start the account-closure form"
+    description: "Follow 'Close account' and sign in when prompted. Spotify emails you a confirmation link."
+  - title: "Confirm via the emailed link"
+    description: "Open the email Spotify sends and click the confirmation link to finalize closure."
+    warning: "You have ~7 days to reactivate before data is permanently removed. Cancel any active Premium subscription first."
+
+deletion_request:
+  method: user_form
+  user_form:
+    url: "https://support.spotify.com/article/close-account/"
+    fields:
+      email: "{{email}}"
+      request_type: "close_account"
+
+metadata:
+  verified_by: "@forget-me"
+  verified_date: "2026-06-30"
+  community_verified: true
+  notes: |
+    Spotify requires you to complete closure in your own browser session and confirm by
+    email, so forget-me hands you the pre-filled flow rather than submitting on your behalf.

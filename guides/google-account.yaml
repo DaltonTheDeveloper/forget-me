@@ -1,0 +1,32 @@
+service:
+  name: Google Account
+  domain: google.com
+  website: https://myaccount.google.com
+deletion:
+  difficulty: medium
+  estimated_time_minutes: 15
+  requires_email_access: true
+  requires_password: true
+steps:
+  - title: Sign in to your Google Account
+    description: Log in to the account you want to delete.
+    url: https://myaccount.google.com
+  - title: Open the account-deletion page
+    description: Data & privacy → More options → Delete your Google Account.
+    url: https://myaccount.google.com/deleteaccount
+  - title: Review what will be deleted
+    description: Optionally download your data via Google Takeout first.
+  - title: Confirm deletion
+    description: Re-enter your password and confirm.
+    warning: Deletes Gmail, Drive, Photos, YouTube, and Play purchases tied to this account. This is permanent.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://myaccount.google.com/deleteaccount
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Self-service deletion. Export anything you need with Google Takeout before confirming.

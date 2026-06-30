@@ -1,0 +1,31 @@
+service:
+  name: Slack
+  domain: slack.com
+  website: https://slack.com
+deletion:
+  difficulty: medium
+  estimated_time_minutes: 10
+  requires_email_access: false
+  requires_password: true
+steps:
+  - title: "Decide: your account vs. a whole workspace"
+    description: A member account is deactivated by a workspace admin; a workspace/org is deleted by its primary owner.
+  - title: Deactivate a member account
+    description: Ask the workspace admin to deactivate you, or a workspace owner can delete the workspace under Settings & administration → Workspace settings.
+    url: https://slack.com/help/articles/207613167-Manage-account-deletion-requests
+  - title: Delete a workspace (owners)
+    description: Settings & administration → Workspace settings → scroll down → Delete Workspace, then confirm with your password.
+  - title: Submit a personal-data deletion request
+    description: If you cannot self-serve, use Slack's data-deletion request process linked above.
+    warning: Individual accounts can only be deactivated by an admin; full deletion of a member's data is handled by the workspace owner or via a privacy request.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://slack.com/help/articles/207613167-Manage-account-deletion-requests
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Slack accounts live inside workspaces. Members are deactivated by admins; workspace owners delete the whole workspace. The linked article covers data-deletion requests.

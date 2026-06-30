@@ -1,0 +1,32 @@
+service:
+  name: Ko-fi
+  domain: ko-fi.com
+  website: https://ko-fi.com
+deletion:
+  difficulty: easy
+  estimated_time_minutes: 5
+  requires_email_access: false
+  requires_password: true
+steps:
+  - title: Sign in to Ko-fi
+    description: Log in to the account you want to delete.
+    url: https://ko-fi.com/account/sign-in
+  - title: Open account settings
+    description: Profile menu → Settings → Account.
+    url: https://help.ko-fi.com
+  - title: Delete account
+    description: Under the account section choose 'Delete account' / 'Close account'.
+  - title: Confirm
+    description: Confirm deletion.
+    warning: Withdraw any available balance first; deletion removes your page and supporter history.
+deletion_request:
+  method: user_form
+  user_form:
+    url: https://help.ko-fi.com
+    fields:
+      email: "{{email}}"
+metadata:
+  verified_by: "@forget-me"
+  verified_date: 2026-06-30
+  community_verified: true
+  notes: Deletion is self-service in account settings. The link points to Ko-fi's help center, which documents the exact steps; withdraw funds before deleting.
